@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 int main(){
-	vector<string>sentence;
+	vector<string>sen;
 	string str;
 	int maxlen=0;
 	while(getline(cin,str)){
