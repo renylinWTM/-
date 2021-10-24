@@ -15,6 +15,7 @@ int main()
         }
         int mid = n / 2;
         int sum = 0;
+        sort(a, a + n);
         for (int i = 0; i < n; i++)
         {
             sum = sum + abs(a[i] - a[mid]);
