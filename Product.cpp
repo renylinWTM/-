@@ -5,15 +5,17 @@ int main()
     string str;
     int x[255] = {0}, y[255] = {0};
     int xlen, ylen, anslen;
-    while (getline(cin, str))
+    while (cin >> str)
     {
         xlen = str.length();
         for (int i = 0; i < xlen; i++)
             x[i] = str[xlen - i - 1] - '0';
-        getline(cin, str);
+
+        cin >> str;
         ylen = str.length();
         for (int i = 0; i < ylen; i++)
             y[i] = str[ylen - i - 1] - '0';
+
         int answer[510] = {0};
         for (int i = 0; i < xlen; i++)
         {
@@ -31,8 +33,8 @@ int main()
         }
         for (int i = anslen - 1; i >= 0; i--)
         {
-            printf("%d", answer[i]);
+            cout << answer[i];
         }
-        cout << endl;
+        cout<<endl;
     }
 }
