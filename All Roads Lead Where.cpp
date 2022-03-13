@@ -20,20 +20,18 @@ int main()
         for (int i = 0; i < path; i++)
         {
             string start, end;
-            while (cin >> start >> end)
+            cin >> start >> end;
+            start = start[0];
+            end = end[0];
+            while (start[start.length() - 1] != 'R')
             {
-                start = start[0];
-                end = end[0];
-                while (start[start.length() - 1] != 'R')
-                {
-                    start += tree[start[start.length() - 1]];
-                }
-                while (end[end.length() - 1] != 'R')
-                {
-                    end += tree[end[end.length() - 1]];
-                }
+                start += tree[start[start.length() - 1]];
             }
-            if (start.length() >= 2 && end.length() >= 2)
+            while (end[end.length() - 1] != 'R')
+            {
+                end += tree[end[end.length() - 1]];
+            }
+            while (start.length() >= 2 && end.length() >= 2)
             {
                 if (start[start.length() - 1] == end[end.length() - 1])
                 {
@@ -48,7 +46,6 @@ int main()
                     }
                 }
             }
-            start.pop_back();
             end.pop_back();
             reverse(end.begin(), end.end());
             start += end;
